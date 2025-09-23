@@ -1,0 +1,150 @@
+:root {
+  --bg: #f9fafb;
+  --accent: #2563eb;
+  --text: #111827;
+  --muted: #6b7280;
+  --max-width: 900px;
+  --gap: 1.5rem;
+  --radius: 0.5rem;
+}
+
+body {
+  font-family: system-ui, sans-serif;
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.5;
+}
+
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: var(--gap);
+}
+
+.site-header {
+  text-align: center;
+  padding: 2rem 1rem;
+}
+
+.site-header h1 {
+  margin: 0;
+  font-size: 2rem;
+}
+
+.subtitle {
+  color: var(--muted);
+  font-size: 1.1rem;
+}
+
+/* Tabs */
+.tab-nav {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+[role="tab"] {
+  background: none;
+  border: none;
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  cursor: pointer;
+  border-radius: var(--radius) var(--radius) 0 0;
+  color: var(--muted);
+}
+
+[role="tab"][aria-selected="true"] {
+  color: var(--text);
+  font-weight: 600;
+  border-bottom: 2px solid var(--accent);
+}
+
+/* Resume Grid */
+.resume-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: var(--gap);
+}
+
+.resume-main h2,
+.resume-side h2 {
+  border-bottom: 2px solid #e5e7eb;
+  padding-bottom: 0.25rem;
+  margin-bottom: 0.75rem;
+}
+
+.resume-side {
+  background: #fff;
+  padding: 1rem;
+  border-radius: var(--radius);
+  box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+}
+
+.skills {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.skills li {
+  background: var(--accent);
+  color: white;
+  padding: 0.25rem 0.5rem;
+  border-radius: var(--radius);
+  font-size: 0.9rem;
+}
+
+.muted {
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+/* Responsive */
+@media (max-width: 700px) {
+  .resume-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .tab-nav {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+.headshot {
+	text-align: center;
+	margin-bottom: 1.5rem;
+}
+
+.headshot img {
+	width: 150px;
+	height: 150px;
+	border-radius: 50%;
+	object-fit: cover;
+	box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+}
+
+.site-nav {
+	display: flex;
+	justify-content: center;
+	gap: 1 rem;
+	margin-bottom: 1.5rem;
+	border-bottom: 1px solid #e5e7eb;
+}
+
+.site-nav a {
+	text-decoration: none;
+	color: var(--muted);
+	padding: 0.75rem 1rem;
+}
+
+.site-nav a.active {
+	color: var(--text);
+	font-weight: 600;
+	border-bottom: 2px solid var(--accent);
+}
